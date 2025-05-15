@@ -18,4 +18,9 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
   },
+  define: {
+    // This ensures environment variables are available in your app
+    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL || 'https://retinascan-backend.onrender.com')
+  },
+  base: '/',
 });

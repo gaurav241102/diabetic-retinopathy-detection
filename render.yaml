@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: retinascan-backend
+    runtime: python3
+    buildCommand: ./build.sh
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.2
+      - key: PORT
+        value: 10000
+      - key: MODEL_PATH
+        value: ./backend/trained_model.pth
+    plan: free
+
+  - type: web
+    name: retinascan-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://retinascan-backend.onrender.com
+    routes:
+      - type: rewrite
+        source: '/*'
+        destination: '/index.html'
+    plan: free

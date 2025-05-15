@@ -16,19 +16,13 @@ services:
     plan: free
 
   # Frontend Service (Static Site)
-  - type: web
+  - type: static_site
     name: retinascan-frontend
-    env: static
     buildCommand: |
       cd frontend
       npm install
       npm run build
-    staticPublishPath: ./frontend/dist
+    outputDir: ./frontend/dist
     envVars:
       - key: VITE_API_URL
         value: https://retinascan-backend.onrender.com
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: "/index.html"
-    plan: free

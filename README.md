@@ -130,8 +130,6 @@ Contributions are what make the open-source community an amazing place to learn,
 ## 🙏 Acknowledgments
 
 - [APTOS 2019 Blindness Detection](https://www.kaggle.com/c/aptos2019-blindness-detection) for the dataset
-- FastAPI and React communities for amazing documentation
-- All contributors who have helped improve this project
 
 ---
 

@@ -3,12 +3,16 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview --port 3000",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
-  },
+
+  
+    "scripts": {
+      "dev": "vite",
+      "build": "npm run tsc && vite build",
+      "preview": "vite preview --port 3000",
+      "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "tsc": "tsc"
+    
+},
   "dependencies": {
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",

@@ -23,8 +23,10 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",  # Local development
     "http://localhost:5173",  # Vite dev server
-    "https://retinascan.vercel.app",  # Update with your Vercel URL
+    "https://retinascan.vercel.app",  # Vercel URL
     "https://*.vercel.app",  # All Vercel deployments
+    "https://retinascan-backend.onrender.com",  # Render backend
+    "https://*.onrender.com",  # All Render deployments
 ]
 
 app.add_middleware(

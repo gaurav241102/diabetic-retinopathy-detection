@@ -66,3 +66,5 @@ dist-ssr/
 
 # Local development
 setup.bat
+
+.vercel

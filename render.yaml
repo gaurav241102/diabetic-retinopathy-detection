@@ -5,15 +5,18 @@ services:
     env: python
     buildCommand: |
       pip install -r backend/requirements.txt
-    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+      mkdir -p backend/models
+      cp backend/trained_model.pth backend/models/
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.2
       - key: PORT
         value: 10000
       - key: MODEL_PATH
-        value: ./backend/trained_model.pth
+        value: ./models/trained_model.pth
     plan: free
+    healthCheckPath: /health
 
   # Frontend Service (Static Site)
   - type: web

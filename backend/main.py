@@ -42,8 +42,11 @@ app.add_middleware(
 async def load_model_on_startup():
     try:
         global model
-        model_path = os.getenv("MODEL_PATH", "trained_model.pth")
+        model_path = os.getenv("MODEL_PATH", "models/trained_model.pth")
         logger.info(f"Loading model from {model_path}")
+        if not os.path.exists(model_path):
+            logger.error(f"Model file not found at {model_path}")
+            raise FileNotFoundError(f"Model file not found at {model_path}")
         model = load_model(model_path)
         logger.info("Model loaded successfully")
     except Exception as e:

@@ -6,7 +6,12 @@ services:
     buildCommand: |
       pip install -r backend/requirements.txt
       mkdir -p backend/models
+      if [ ! -f backend/trained_model.pth ]; then
+        echo "Error: trained_model.pth not found in backend directory"
+        exit 1
+      fi
       cp backend/trained_model.pth backend/models/
+      echo "Model file copied successfully"
     startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION

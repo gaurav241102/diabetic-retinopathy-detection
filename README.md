@@ -142,15 +142,6 @@ Contributions are what make the open-source community an amazing place to learn,
 Gaurav Prakash - [@yourtwitter](https://x.com/bingie_brinjal) - gaurav31308@gmail.com
 
 Project Link: [https://github.com/gaurav241102/diabetic-retinopathy-detection]
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   The frontend will be available at `http://localhost:5173` (or another port if 5173 is in use)
 
 ## Usage
 

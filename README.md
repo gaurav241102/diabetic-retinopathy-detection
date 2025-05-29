@@ -22,6 +22,9 @@ A deep learning-powered web application that helps detect and classify Diabetic 
 | **CI/CD** | GitHub Actions |
 
 ## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/781a87c3-c043-41d5-9d5e-537ac92371c8)
+![image](https://github.com/user-attachments/assets/5b7b1ec7-4f74-4690-b05c-d7fdac7ad27b)
+![image](https://github.com/user-attachments/assets/f876b0d9-285a-4e13-ad9f-fd4c16c8fedf)
 
 
 
